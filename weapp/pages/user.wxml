@@ -1,0 +1,24 @@
+<!----------   wxs start ----------->
+<wxs module="m1">
+"use strict";
+
+var getTime = function getTime(time) {
+  var date = getDate(time);
+  var hour = date.getHours();
+  var mins = date.getMinutes();
+  var sec = date.getSeconds();
+  var milli = date.getMilliseconds();
+  return "".concat(hour, ":").concat(mins, ":").concat(sec, ".").concat(milli);
+};
+
+module.exports.getTime = getTime;
+</wxs>
+<!----------   wxs end   ----------->
+
+<view class="container">
+  <panel bind_init="_initComponent" wx:for="{{ books }}" wx:for-index="index" wx:for-item="book" wx:key="index">
+    
+    <view class="book-title">{{ book.title }}</view>
+    <view class="book-progress">{{ book.progress }}</view>
+  </panel>
+</view>

@@ -57,10 +57,11 @@ module.exports.getTime = getTime;
 </wxs>
 <template>
   <div class="container">
-    <div class="userinfo" @tap="handleViewTap">
-      <image class="userinfo-avatar" src="{{ userInfo.avatarUrl }}" background-size="cover"/>
-      <div class="userinfo-nickname">{{ userInfo.nickName }}</div>
-    </div>
+    <panel v-for="book in books">
+      <!--<image class="book-img"/>-->
+      <div class="book-title">{{ book.title }}</div>
+      <div class="book-progress">{{ book.progress }}</div>
+    </panel>
 
     <panel>
       <div class="title" slot="title">测试数据绑定</div>
@@ -169,6 +170,20 @@ module.exports.getTime = getTime;
     mixins: [testMixin],
 
     data: {
+      books:[{
+        imgUrl: "",
+        title: "斗罗大陆",
+        progress: "50%"
+      },{
+        imgUrl: "",
+        title: "斗破苍穹",
+        progress: "25%"
+      },{
+        imgUrl: "",
+        title: "狼牙棒",
+        progress: "10%"
+      }],
+
       inputmodel: 'v-model',
       mynum: 20,
       userInfo: {
@@ -301,7 +316,7 @@ module.exports.getTime = getTime;
 </script>
 <config>
 {
-    navigationBarTitleText: 'WePY 2.0 Feature Demo',
+    navigationBarTitleText: '',
     usingComponents: {
       panel: '~@/components/panel',
       counter: '~counter',

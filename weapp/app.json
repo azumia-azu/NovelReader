@@ -1,12 +1,27 @@
 {
-  "pages": [
-    "pages/index"
-  ],
-  "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
-  },
-  "sitemapLocation": "sitemap.json"
+    "pages": [
+        "pages/index",
+        "pages/user"
+    ],
+    "tabBar": {
+        "color": "#ffff",
+        "selectedColor": "#ffff",
+        "backgroundColor": "#0000",
+        "list": [
+            {
+                "pagePath": "pages/index",
+                "text": "书架"
+            },
+            {
+                "pagePath": "pages/user",
+                "text": "我的"
+            }
+        ]
+    },
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "WeChat",
+        "navigationBarTextStyle": "black"
+    }
 }
