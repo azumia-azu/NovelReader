@@ -1,24 +1,41 @@
-<!----------   wxs start ----------->
-<wxs module="m1">
-"use strict";
-
-var getTime = function getTime(time) {
-  var date = getDate(time);
-  var hour = date.getHours();
-  var mins = date.getMinutes();
-  var sec = date.getSeconds();
-  var milli = date.getMilliseconds();
-  return "".concat(hour, ":").concat(mins, ":").concat(sec, ".").concat(milli);
-};
-
-module.exports.getTime = getTime;
-</wxs>
-<!----------   wxs end   ----------->
 
 <view class="container">
-  <panel bind_init="_initComponent" wx:for="{{ books }}" wx:for-index="index" wx:for-item="book" wx:key="index">
+  <view hidden="{{ !(!authed) }}">
+    <open-data type="userAvatarUrl"></open-data>
+    <open-data type="userNickName"></open-data>
     
-    <view class="book-title">{{ book.title }}</view>
-    <view class="book-progress">{{ book.progress }}</view>
-  </panel>
+    <button wx:if="{{canIUse}}" open-type="getUserInfo" data-wpy-evt="8-22" bindgetuserinfo="_proxy">授权登录</button>
+    <view wx:else="">请升级微信版本</view>
+  </view>
+  <view hidden="{{ !(authed) }}" style="width:100%">
+    <panel bind_init="_initComponent">
+      <view class="user">
+        <view class="user-icon">
+          <open-data type="userAvatarUrl"></open-data>
+        </view>
+        <view class="user-info">
+          <view class="nickName">{{ userInfo.nickName }}</view>
+          <view class="addr">{{ userInfo.country + "-" + userInfo.province + "-" + userInfo.city}}</view>
+        </view>
+      </view>
+    </panel>
+
+    <panel bind_init="_initComponent">
+      <view data-wpy-evt="8-23" bindtap="_proxy" class="item">
+        <view>
+          <image src="https://img.icons8.com/ios/1600/order-history.png" class="icon"></image>
+        </view>
+        <view class="label">{{ "浏览记录" }}</view>
+      </view>
+    </panel>
+    <panel bind_init="_initComponent">
+      <view data-wpy-evt="8-24" bindtap="_proxy" class="item">
+        <view>
+          <image src="https://zh.opensuse.org/images/5/57/Icon-question.png" class="icon"></image>
+        </view>
+        <view class="label">{{ "关于" }}</view>
+      </view>
+    </panel>
+
+  </view>
 </view>

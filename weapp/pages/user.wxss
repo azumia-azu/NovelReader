@@ -1,1 +1,40 @@
+.user {
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+}
+.user-icon {
+  width: 100rpx;
+  height: 100rpx;
+}
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+.nickName {
+  align-content: center;
+  height: 50%;
+  padding-left: 40rpx;
+  font-size: 12px;
+  font-weight: bold;
+}
+.addr {
+  align-content: center;
+  height: 50%;
+  padding-left: 40rpx;
+  font-size: 8px;
+  font-weight: lighter;
+}
+.item {
+  height: 35rpx;
+  display: flex;
+  flex-direction: row;
+}
+.icon {
+  width: 30rpx;
+  height: 30rpx;
+}
+.label {
+  padding-left: 10rpx;
+}
 

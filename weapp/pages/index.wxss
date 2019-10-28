@@ -1,43 +1,28 @@
-input {
-  border: 1rpx solid #ccc;
-  display: inline-block;
-  width: 200rpx;
-  border-radius: 5rpx;
+.book {
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
 }
-.info {
-  padding-right: 10rpx;
+.book-img {
+  width: 75rpx;
+  height: 100rpx;
 }
-.userinfo {
+.book-text-info-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
-.userinfo-avatar {
-  width: 80rpx;
-  height: 80rpx;
-  border-radius: 50%;
+.book-title {
+  align-content: center;
+  height: 50%;
+  padding-left: 40rpx;
+  font-size: 12px;
+  font-weight: bold;
 }
-.userinfo-nickname {
-  color: #aaa;
-}
-.slide {
-  width: 640rpx;
-  display: flex;
-  border: 1rpx solid #ccc;
-  font-size: 28rpx;
-  align-items: center;
-  box-sizing: border-box;
-}
-.slide .left {
-  width: 750rpx;
-  padding: 20rpx;
-}
-.slide .right {
-  display: flex;
-}
-.slide .right .right-item {
-  padding: 20rpx 30rpx;
-  background-color: red;
-  color: #fff;
+.book-progress {
+  align-content: center;
+  height: 50%;
+  padding-left: 40rpx;
+  font-size: 8px;
+  font-weight: lighter;
 }
 

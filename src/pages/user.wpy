@@ -1,33 +1,91 @@
 <style lang="less">
+  .user{
+    height: 100rpx;
+    display: flex;
+    flex-direction: row;
+  }
+  .user-icon{
+    width: 100rpx;
+    height: 100rpx;
+  }
+  .user-info{
+    display: flex;
+    flex-direction: column;
+  }
+  .nickName{
+      align-content: center;
+      height: 50%;
+      padding-left: 40rpx;
+      font-size: 12px;
+      font-weight: bold;
+    }
+  .addr{
+    align-content: center;
+    height:50%;
+    padding-left: 40rpx;
+    font-size: 8px;
+    font-weight: lighter;
+  }
+  .item{
+    height: 35rpx;
+    display: flex;
+    flex-direction: row;
+  }
+  .icon{
+    width: 30rpx;
+    height: 30rpx;
+  }
+  .label{
+    padding-left: 10rpx;
+  }
 </style>
-<wxs module="m1" lang="babel">
-const getTime = (time) => {
-  let date = getDate(time);
-  let hour = date.getHours();
-  let mins = date.getMinutes();
-  let sec = date.getSeconds();
-  let milli = date.getMilliseconds();
-  return `${hour}:${mins}:${sec}.${milli}`;
-}
-module.exports.getTime = getTime;
-</wxs>
 <template>
   <div class="container">
-    <panel v-for="book in books">
-      <!--<image class="book-img"/>-->
-      <div class="book-title">{{ book.title }}</div>
-      <div class="book-progress">{{ book.progress }}</div>
-    </panel>
+    <div v-show="!authed">
+      <open-data type="userAvatarUrl"></open-data>
+      <open-data type="userNickName"></open-data>
+      <!-- 需要使用 button 来授权登录 -->
+      <button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+      <view wx:else>请升级微信版本</view>
+    </div>
+    <div v-show="authed" style="width:100%">
+      <panel>
+        <view class="user">
+          <view class="user-icon">
+            <open-data type="userAvatarUrl"></open-data>
+          </view>
+          <view class="user-info">
+            <view class="nickName">{{ userInfo.nickName }}</view>
+            <view class="addr">{{ userInfo.country + "-" + userInfo.province + "-" + userInfo.city}}</view>
+          </view>
+        </view>
+      </panel>
+
+      <panel>
+        <view class="item" @tap="getRecord()">
+          <view>
+            <image class="icon" src="https://img.icons8.com/ios/1600/order-history.png"/>
+          </view>
+          <view class="label">{{ "浏览记录" }}</view>
+        </view>
+      </panel>
+      <panel>
+        <view class="item" @tap="getAbout()">
+          <view>
+            <image class="icon" src="https://zh.opensuse.org/images/5/57/Icon-question.png"/>
+          </view>
+          <view class="label">{{ "关于" }}</view>
+        </view>
+      </panel>
+
+    </div>
   </div>
 </template>
 
 <script>
   import wepy from '@wepy/core'
-  import eventHub from '../common/eventHub';
-  import store from '../store';
 
   wepy.page({
-    store,
     config: {
     },
 
@@ -36,40 +94,49 @@ module.exports.getTime = getTime;
     },
 
     data: {
-      books:[{
-        imgUrl: "",
-        title: "斗罗大陆",
-        progress: "50%"
-      },{
-        imgUrl: "",
-        title: "斗破苍穹",
-        progress: "25%"
-      },{
-        imgUrl: "",
-        title: "狼牙棒",
-        progress: "10%"
-      }]
+      canIUse: wx.canIUse('button.open-type.getUserInfo'),
+      authed: false,
+      userInfo: {}
     },
 
     computed: {
     },
 
     methods: {
+      bindGetUserInfo (e) {
+        this.authed=true;
+        this.userInfo=e.$wx.detail.userInfo;
+      },
+      getRecord(){
+        wx.navigateTo({ url: 'records'});
+        console.log("获取观看记录");
+      },
+      getAbout(){
+        wx.navigateTo({ url: 'about'});
+        console.log("获取关于");
+      }
     },
 
-    created () {
+    created() {
+      wx.getSetting({
+        success(res){
+          if (res.authSetting['scope.userInfo']) {
+            wx.getUserInfo({
+              success: function(res) {
+                console.log(res.userInfo);
+              }
+            })
+          }
+        }
+      })
     }
   });
 </script>
 <config>
 {
-    navigationBarTitleText: 'WePY 2.0 Feature Demo',
+    navigationBarTitleText: '我的信息',
     usingComponents: {
       panel: '~@/components/panel',
-      counter: '~counter',
-      list: '../components/list',
-      group: '../components/group',
-      "slide-view": "module:miniprogram-slide-view",
     }
 }
 </config>
