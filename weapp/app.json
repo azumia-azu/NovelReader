@@ -3,7 +3,9 @@
         "pages/index",
         "pages/user",
         "pages/records",
-        "pages/about"
+        "pages/reader",
+        "pages/detail",
+        "pages/store"
     ],
     "tabBar": {
         "color": "#dddddd",
@@ -18,6 +20,12 @@
                 "text": "书架"
             },
             {
+                "pagePath": "pages/store",
+                "iconPath": "resource/tabBar/store.png",
+                "selectedIconPath": "resource/tabBar/store_selected.png",
+                "text": "书城"
+            },
+            {
                 "pagePath": "pages/user",
                 "iconPath": "resource/tabBar/my.png",
                 "selectedIconPath": "resource/tabBar/my_selected.png",
@@ -28,7 +36,8 @@
     "window": {
         "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#fff",
-        "navigationBarTitleText": "WeChat",
-        "navigationBarTextStyle": "black"
+        "navigationBarTitleText": "NovelReader",
+        "navigationBarTextStyle": "black",
+        "navigationStyle": "custom"
     }
 }

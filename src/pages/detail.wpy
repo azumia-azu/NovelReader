@@ -1,0 +1,190 @@
+<style>
+  .head{
+    width: 100%;
+    height: 250rpx;
+    padding-top: 20rpx;
+  }
+  .bookImg{
+    width: 160rpx;
+    height: 200rpx;
+  }
+  .bookTitles{
+    text-align: left;
+    padding-top: 50rpx;
+    padding-left: 25rpx;
+  }
+  .content{
+    width: 100%;
+  }
+  .footer{
+    position: fixed;
+    bottom: 0px;
+    height: 120rpx;
+    background: #fff;
+    width: 100%;
+    opacity: 1;
+    z-index: 10004;
+    margin: 0 auto;
+    text-align: center;
+    box-shadow: 0rpx 2rpx 5rpx 5rpx rgba(147, 144, 149, 0.49);
+  }
+</style>
+
+<template>
+  <div style="width: 100%;height: 100vh">
+    <div style="width: 100vw;font-size: large; font-weight: lighter;">
+      <van-nav-bar
+        title="书籍详情"
+        left-arrow="true"
+        @click="onBack"
+      />
+    </div>
+    <div class="head">
+      <van-cell-group>
+        <van-row>
+          <van-col span="8">
+            <div class="bookImg">
+              <image src="http://a1.att.hudong.com/64/42/01300000602809125714424690146.jpg" style="width: 120rpx;height: 160rpx;padding: 50rpx"/>
+            </div>
+          </van-col>
+          <van-col span="16">
+            <div class="bookTitles">
+              <div>{{ book.title }}</div>
+              <div style="font-weight: lighter">{{ book.author }}</div>
+            </div>
+          </van-col>
+        </van-row>
+      </van-cell-group>
+    </div>
+    <div class="content">
+      <van-cell-group>
+        <van-row>
+          <van-col span="12">
+            <div style="text-align: center;">
+              <text>{{ book.rate? book.rate+'分' : '' }}</text>
+            </div>
+            <div style="align-content: center">
+              <van-rate
+                value="{{ book.rate }}"
+                icon="like"
+                void-icon="like-o"
+              />
+            </div>
+          </van-col>
+          <van-col span="12">
+            <div style="text-align: center">{{ book.rate? '阅读量': ''}}</div>
+            <div style="font-weight: lighter;text-align: center">{{ book.rate? '1w+阅读' : '' }}</div>
+          </van-col>
+        </van-row>
+      </van-cell-group>
+      <van-cell-group>
+        <div style="font-weight: lighter;padding: 20rpx">{{ book.info }}</div>
+      </van-cell-group>
+    </div>
+  </div>
+  <div class="footer">
+    <van-row>
+      <van-col span="8">
+        <div style="height: 100%;padding-top: 40rpx" @click="addToShelf">加入书架</div>
+      </van-col>
+      <van-col span="8">
+        <div style="background-color: #ff7800; height: 120rpx;padding-top: 40rpx" @click="openReader">立即阅读</div>
+      </van-col>
+      <van-col span="8">
+        <div style="height: 100%;padding-top: 40rpx" @click="collect">收藏</div>
+      </van-col>
+    </van-row>
+  </div>
+</template>
+<script>
+  import wepy from '@wepy/core'
+
+  wepy.page({
+    data: {
+      book: {
+        id: 1,
+        title: '杀破狼',
+        author: '张黎',
+        rate: '9',
+        info: '边陲小镇雁回城里有座“将军坡”，起的名字威风凛凛，其实就是个小土包，脖子长的一眼能望过坡顶将军坡也不是从来就有，传说那是十四年前，大梁第一铁骑玄铁三大营北伐，荡平蛮族十八部落，班师回朝时途径雁回城，将废甲弃置此地，就地落成了一座小山，后来沙尘砥砺，风吹雨打，就成了将军坡。'
+      }
+    },
+    methods: {
+      onBack(){
+        console.log('返回');
+        wx.navigateBack({
+          delta: 1
+        });
+      },
+      addToShelf(){
+        console.log('点击加入书架');
+        wx.getStorage({
+          key: 'shelf',
+          success: (result)=>{
+            let books = result.data;
+            books.push(this.book);
+            wx.setStorage({
+              key: 'shelf',
+              data: books
+            });
+
+            wx.showToast({
+              title: '成功加入书架',
+              duration: 1500
+            })
+          }
+        });
+      },
+      openReader(){
+        console.log('点击阅读');
+        wx.navigateTo({
+          url: 'reader?id=' + this.book.id
+        })
+      },
+      collect(){
+        console.log('点击收藏');
+        wx.getStorage({
+          key: 'collection',
+          success: (result)=>{
+            let books = result.data;
+            books.push(this.book);
+            wx.setStorage({
+              key: 'collection',
+              data: books
+            });
+
+            wx.showToast({
+              title: '成功加入收藏',
+              duration: 1500,
+            })
+          }
+        });
+      }
+    },
+    onLoad(options){
+      const id = options.id;
+      /*
+      wepy.request({
+        url: 'url', //开发者服务器接口地址",
+        data: 'data', //请求的参数",
+        method: ' POST',
+        dataType: 'json', //如果设为json，会尝试对返回的数据做一次 JSON.parse
+        success: res => {
+
+        },
+      });*/
+    }
+  });
+</script>
+<config>
+  {
+    usingComponents: {
+      "van-cell-group": "~@/components/dist/cell-group/index",
+      "van-rate": "~@/components/dist/rate/index",
+      "van-icon": "~@/components/dist/icon/index",
+      "van-row": "~@/components/dist/row/index",
+      "van-col": "~@/components/dist/col/index",
+      "van-nav-bar": "~@/components/dist/nav-bar/index"
+    }
+  }
+</config>

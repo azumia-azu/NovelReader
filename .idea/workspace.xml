@@ -1,7 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1656c648-508b-4e93-93bd-5d057319f58d" name="Default Changelist" comment="" />
+    <list default="true" id="1656c648-508b-4e93-93bd-5d057319f58d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/pages/collection.wpy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/detail.wpy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/project.config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.wpy" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.wpy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/counter.wpy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/group.wpy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/groupitem.wpy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/list.wpy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/panel.wpy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/wepy-list.wpy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/about.wpy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index.wpy" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.wpy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/reader.wpy" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/reader.wpy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/user.wpy" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/user.wpy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weapp/$vendor/regenerator-runtime/runtime-module.js" beforeDir="false" afterPath="$PROJECT_DIR$/weapp/$vendor/regenerator-runtime/runtime-module.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weapp/$vendor/regenerator-runtime/runtime.js" beforeDir="false" afterPath="$PROJECT_DIR$/weapp/$vendor/regenerator-runtime/runtime.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weapp/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/weapp/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weapp/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/weapp/app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weapp/app.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/weapp/app.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weapp/common/eventHub.js" beforeDir="false" afterPath="$PROJECT_DIR$/weapp/common/eventHub.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weapp/components/counter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weapp/components/counter.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weapp/components/counter.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weapp/components/counter.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weapp/components/group.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weapp/components/group.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weapp/components/group.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weapp/components/group.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weapp/components/groupitem.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weapp/components/groupitem.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weapp/components/groupitem.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weapp/components/groupitem.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weapp/components/panel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weapp/components/panel.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weapp/components/panel.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weapp/components/panel.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weapp/components/wepy-list.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weapp/components/wepy-list.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weapp/components/wepy-list.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weapp/components/wepy-list.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weapp/pages/about.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weapp/pages/about.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weapp/pages/about.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weapp/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/weapp/pages/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weapp/pages/index.json" beforeDir="false" afterPath="$PROJECT_DIR$/weapp/pages/index.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weapp/pages/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/weapp/pages/index.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weapp/pages/index.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/weapp/pages/index.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weapp/pages/records.js" beforeDir="false" afterPath="$PROJECT_DIR$/weapp/pages/records.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weapp/pages/records.json" beforeDir="false" afterPath="$PROJECT_DIR$/weapp/pages/records.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weapp/pages/records.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/weapp/pages/records.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weapp/pages/records.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/weapp/pages/records.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weapp/pages/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/weapp/pages/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weapp/pages/user.json" beforeDir="false" afterPath="$PROJECT_DIR$/weapp/pages/user.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weapp/pages/user.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/weapp/pages/user.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weapp/pages/user.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/weapp/pages/user.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weapp/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/weapp/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weapp/vendor.js" beforeDir="false" afterPath="$PROJECT_DIR$/weapp/vendor.js" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -12,17 +73,148 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/user.wpy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="42">
+              <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#image#0;n#div#0;n#van-col#0;n#van-row#0;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#van-col#1;n#van-row#0;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#van-col#1;n#van-row#0;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="e#2059#2089#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/detail.wpy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="872">
+              <caret line="140" column="42" selection-start-line="140" selection-start-column="42" selection-end-line="140" selection-end-column="42" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#image#0;n#div#0;n#van-col#0;n#van-row#0;n#van-cell-group#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#van-col#1;n#van-row#0;n#van-cell-group#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#van-col#0;n#van-row#0;n#van-cell-group#0;n#div#2;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#van-col#0;n#van-row#0;n#van-cell-group#0;n#div#2;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#van-col#1;n#van-row#0;n#van-cell-group#0;n#div#2;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#van-col#1;n#van-row#0;n#van-cell-group#0;n#div#2;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#van-cell-group#1;n#div#3;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#van-col#0;n#van-row#0;n#div#1;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#van-col#1;n#van-row#0;n#div#1;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#van-col#2;n#van-row#0;n#div#1;n#template#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/collection.wpy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="51" column="24" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#van-cell-group#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app.wpy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="63" column="21" selection-start-line="63" selection-start-column="21" selection-end-line="63" selection-end-column="21" />
+              <folding>
+                <element signature="e#196#226#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/pages/index.wpy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="498">
+              <caret line="84" column="13" lean-forward="true" selection-start-line="84" selection-start-column="13" selection-end-line="84" selection-end-column="40" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#van-search#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#van-cell-group#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/store.wpy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-508">
+              <caret line="58" column="80" selection-start-line="58" selection-start-column="80" selection-end-line="58" selection-end-column="80" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#swiper#0;n#view#0;n#template#0;n#!!top" />
+                <element signature="e#5497#5955#0" />
+                <element signature="e#4589#4607#0" />
+                <element signature="e#2554#2645#0" />
+                <element signature="e#2782#2869#0" />
+                <element signature="e#4972#5121#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/reader.wpy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="622" column="9" selection-start-line="616" selection-start-column="6" selection-end-line="622" selection-end-column="9" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#div#0;n#template#0;n#!!top" />
+                <element signature="n#style#0;n#div#1;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#div#1;n#template#0;n#!!top" />
+                <element signature="n#div#2;n#template#0;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/pages/reader.wpy" />
+        <option value="$PROJECT_DIR$/src/components/dist/notify/notify.js" />
+        <option value="$PROJECT_DIR$/src/app.wpy" />
+        <option value="$PROJECT_DIR$/src/pages/store.wpy" />
+        <option value="$PROJECT_DIR$/src/pages/user.wpy" />
+        <option value="$PROJECT_DIR$/src/pages/detail.wpy" />
+        <option value="$PROJECT_DIR$/src/pages/collection.wpy" />
+        <option value="$PROJECT_DIR$/src/pages/index.wpy" />
+      </list>
+    </option>
+  </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="y" value="-10" />
+    <option name="x" value="762" />
+    <option name="y" value="38" />
     <option name="width" value="980" />
     <option name="height" value="1060" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -41,6 +233,29 @@
               <item name="NovelReader" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="NovelReader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="NovelReader" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="NovelReader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="NovelReader" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="store" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="NovelReader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="NovelReader" type="462c0819:PsiDirectoryNode" />
+              <item name="weapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="NovelReader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="NovelReader" type="462c0819:PsiDirectoryNode" />
+              <item name="weapp" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -52,6 +267,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="editor.config.ad.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../TowerMonitor" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -81,6 +297,8 @@
       <option name="presentableId" value="Default" />
       <updated>1572245296940</updated>
       <workItem from="1572245301285" duration="484000" />
+      <workItem from="1572512416274" duration="8000" />
+      <workItem from="1575695869065" duration="57995000" />
     </task>
     <task id="LOCAL-00001" summary="edit:重构项目为wepy项目">
       <created>1572245743617</created>
@@ -93,19 +311,15 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="484000" />
+    <option name="totallyTimeSpent" value="58487000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24966975" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="GraphQL" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" weight="0.32960895" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -113,6 +327,11 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="GraphQL" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.35055867" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.32960895" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -126,8 +345,154 @@
     <option name="LAST_COMMIT_MESSAGE" value="edit:重构项目为wepy项目" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/app.wpy">
+    <entry file="file://$PROJECT_DIR$/src/store/index.js">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/weapp/pages/reader.wxss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="445" column="33" lean-forward="true" selection-start-line="445" selection-start-column="33" selection-end-line="445" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/dist/notify/notify.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="25" column="42" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/dist/notify/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/dist/dialog/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/dist/dialog/index.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/counter.wpy">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/about.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/user.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#image#0;n#div#0;n#van-col#0;n#van-row#0;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#van-col#1;n#van-row#0;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#van-col#1;n#van-row#0;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="e#2059#2089#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/collection.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="51" column="24" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#van-cell-group#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="63" column="21" selection-start-line="63" selection-start-column="21" selection-end-line="63" selection-end-column="21" />
+          <folding>
+            <element signature="e#196#226#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/detail.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="872">
+          <caret line="140" column="42" selection-start-line="140" selection-start-column="42" selection-end-line="140" selection-end-column="42" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#image#0;n#div#0;n#van-col#0;n#van-row#0;n#van-cell-group#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#van-col#1;n#van-row#0;n#van-cell-group#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#van-col#0;n#van-row#0;n#van-cell-group#0;n#div#2;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#van-col#0;n#van-row#0;n#van-cell-group#0;n#div#2;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#van-col#1;n#van-row#0;n#van-cell-group#0;n#div#2;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#van-col#1;n#van-row#0;n#van-cell-group#0;n#div#2;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#van-cell-group#1;n#div#3;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#van-col#0;n#van-row#0;n#div#1;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#van-col#1;n#van-row#0;n#div#1;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#van-col#2;n#van-row#0;n#div#1;n#template#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/store.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-508">
+          <caret line="58" column="80" selection-start-line="58" selection-start-column="80" selection-end-line="58" selection-end-column="80" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#swiper#0;n#view#0;n#template#0;n#!!top" />
+            <element signature="e#5497#5955#0" />
+            <element signature="e#4589#4607#0" />
+            <element signature="e#2554#2645#0" />
+            <element signature="e#2782#2869#0" />
+            <element signature="e#4972#5121#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/reader.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="622" column="9" selection-start-line="616" selection-start-column="6" selection-end-line="622" selection-end-column="9" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#template#0;n#!!top" />
+            <element signature="n#style#0;n#div#1;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#template#0;n#!!top" />
+            <element signature="n#div#2;n#template#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/index.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="498">
+          <caret line="84" column="13" lean-forward="true" selection-start-line="84" selection-start-column="13" selection-end-line="84" selection-end-column="40" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#van-search#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#van-cell-group#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
 </project>

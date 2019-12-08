@@ -1,14 +1,18 @@
 
 <view class="container">
-  <panel bind_init="_initComponent" wx:for="{{ books }}" wx:for-index="index" wx:for-item="book" wx:key="index">
-    <view data-wpy-evt="7-1" bindtap="_proxy" data-wpytap-a="{{ book }}" class="book">
-      <view class="book-img">
-        <image src="http://a1.att.hudong.com/64/42/01300000602809125714424690146.jpg" class="book-img"></image>
-      </view>
-      <view class="book-text-info-container">
-        <view class="book-title">{{ book.title }}</view>
-        <view class="book-progress">{{ book.progress }}</view>
-      </view>
-    </view>
-  </panel>
+  <view style="align-content: flex-start; font-size: large; font-weight: lighter;padding-left: 50rpx">{{'NovelReader'}}</view>
+  <van-search bind_init="_initComponent" value="{{ searchBookName }}" placeholder="请输入搜索关键词" show-action="" data-wpy-evt="4-0" bindsearch="_proxy" bindcancel="_proxy" style="width: 100%"></van-search>
+
+  <van-cell-group bind_init="_initComponent" wx:for="{{ books }}" wx:for-index="index" wx:for-item="book" wx:key="index" id="{{book.id}}" right-width="{{ 65 }}" key="{{ index }}" data-wpy-evt="4-2" bindtap="_proxy" bindtouchStart="_proxy" bindtouchEnd="_proxy" bindlongtap="_proxy" style="width: 100%">
+    <van-row bind_init="_initComponent">
+      <van-col bind_init="_initComponent" span="7">
+        <view class="book-img-contaniner">
+          <image src="http://a1.att.hudong.com/64/42/01300000602809125714424690146.jpg" class="book-img"></image>
+        </view>
+      </van-col>
+      <van-col bind_init="_initComponent" span="17">
+        <van-cell bind_init="_initComponent" title="{{ book.title }}" label="{{ '进度:' + book.progress }}" border="{{ false }}"></van-cell>
+      </van-col>
+    </van-row>
+  </van-cell-group>
 </view>

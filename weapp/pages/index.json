@@ -1,7 +1,11 @@
 {
-    "navigationBarTitleText": "MyReader",
     "component": true,
     "usingComponents": {
-        "panel": "../components/panel"
+        "van-search": "../components/dist/search/index",
+        "van-cell": "../components/dist/cell/index",
+        "van-cell-group": "../components/dist/cell-group/index",
+        "van-row": "../components/dist/row/index",
+        "van-col": "../components/dist/col/index",
+        "van-swipe-cell": "../components/dist/swipe-cell/index"
     }
 }

@@ -1,0 +1,152 @@
+<style lang="less">
+  .book-img{
+    width: 120rpx;
+    height: 180rpx;
+    padding-left: 50rpx;
+  }
+  .book-img-contaniner{
+    width:100%;
+    height:160rpx;
+    margin-bottom: 15rpx;
+    margin-top: 15rpx;
+  }
+</style>
+<template>
+  <div class="container">
+    <div style="align-content: flex-start; font-size: large; font-weight: lighter;padding-left: 50rpx">{{'我的收藏'}}</div>
+    <van-cell-group v-for="(book, index) in books"
+                    id="{{book.id}}"
+                    style="width: 100%" right-width="{{ 65 }}"
+                    v-bind:key="index"
+                    @tap="openReader"
+                    @touchStart="touchStart"
+                    @touchEnd = "touchEnd"
+                    @longtap="deleteBook">
+      <van-row>
+        <van-col span="7">
+          <div class="book-img-contaniner">
+            <image class="book-img" src="http://a1.att.hudong.com/64/42/01300000602809125714424690146.jpg"/>
+          </div>
+        </van-col>
+        <van-col span="17">
+          <van-cell title="{{ book.title }}" label="{{ '进度:' + book.progress }}" border="{{ false }}"/>
+        </van-col>
+      </van-row>
+    </van-cell-group>
+  </div>
+</template>
+
+<script>
+  import wepy from '@wepy/core'
+
+  wepy.page({
+    data: {
+      firstSHow: true,
+      searchBookName: null,
+
+      books:[]
+    },
+
+    onShow(){
+      wx.getStorage({
+        key: 'collection',
+        success: (result)=>{
+          this.books = result.data
+        },
+      });
+    },
+    methods: {
+      openReader(e) {
+        const id = e.currentTarget.id;
+
+        let book = {};
+        for(let i=0;i<this.books.length;i++){
+          if(this.books[i].id === id){
+            book = this.books[i];
+            break;
+          }
+        }
+
+        wx.navigateTo({
+          url: 'reader?' + 'id=' + book.id + '&' + 'progress=' + book.progress
+        })
+      },
+      searchBook(){
+        console.log("监听到搜索");
+
+        /*
+        wepy.request({
+          url: 'url', //开发者服务器接口地址",
+          data: 'data', //请求的参数",
+          method: ' POST',
+          dataType: 'json', //如果设为json，会尝试对返回的数据做一次 JSON.parse
+          success: res => {
+            if(res.length > 0)  this.books = res;
+            else{
+              Dialog.confirm({
+                message: '无此记录'
+              }).then(() => {
+                instance.close();
+              });
+            }
+          },
+        });*/
+      },
+      cancelSearchBook(){
+        console.log("监听到搜索取消");
+
+        /*
+        wepy.request({
+          url: 'url', //开发者服务器接口地址",
+          data: 'data', //请求的参数",
+          method: ' POST',
+          dataType: 'json', //如果设为json，会尝试对返回的数据做一次 JSON.parse
+          success: res => {
+            if(res.length > 0)  this.books = res;
+            else{
+              Dialog.confirm({
+                message: '无此记录'
+              }).then(() => {
+                instance.close();
+              });
+            }
+          },
+        });
+
+        this.searchBookName = null;
+        */
+      },
+      deleteBook(e) {
+        //console.log('监听到长按事件');
+        const id = e.currentTarget.id;
+        //console.log(e);
+        const books_copy = [];
+        for(let i=0;i<this.books.length;i++){
+          if(id === this.books[i].id)  continue;
+          books_copy.push(this.books[i]);
+        }
+
+        //console.log(books_copy);
+        this.books = books_copy.slice(0);
+      },
+      touchStart (e) {
+        console.log();
+      },
+      touchEnd (e) {
+        console.log(e);
+      }
+    }
+  });
+</script>
+<config>
+  {
+  usingComponents: {
+  "van-search": "~@/components/dist/search/index",
+  "van-cell": "~@/components/dist/cell/index",
+  "van-cell-group": "~@/components/dist/cell-group/index",
+  "van-row": "~@/components/dist/row/index",
+  "van-col": "~@/components/dist/col/index",
+  "van-swipe-cell": "~@/components/dist/swipe-cell/index"
+  }
+  }
+</config>

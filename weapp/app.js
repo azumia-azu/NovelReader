@@ -1,83 +1,50 @@
 "use strict";
 
-var _regeneratorRuntime2 = _interopRequireDefault(require('vendor.js')(2));
-
 var _core = _interopRequireDefault(require('vendor.js')(0));
 
-var _eventHub = _interopRequireDefault(require('common/eventHub.js'));
-
-var _x = _interopRequireDefault(require('vendor.js')(4));
+var _x = _interopRequireDefault(require('vendor.js')(2));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 _core["default"].use(_x["default"]);
 
 _core["default"].app({
-  hooks: {
-    // App 级别 hook，对整个 App 生效
-    // 同时存在 Page hook 和 App hook 时，优先执行 Page hook，返回值再交由 App hook 处
-    'before-setData': function beforeSetData(dirty) {
-      console.log('setData dirty: ', dirty);
-      return dirty;
-    }
-  },
-  globalData: {
-    userInfo: null
-  },
   onLaunch: function onLaunch() {
-    this.testAsync();
+    var _this = this;
 
-    _eventHub["default"].$on('app-launch', function () {
-      console.log('app-launch event emitted, the params are:');
+    wx.login({
+      success: function success(res) {
+        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        // 也就是发送到后端,后端通过接口发送到前端，前端接收用户信息等....
+        //wx.setStorageSync('code', res.code);
+        //console.log(wx.getStorageSync('code'))
+        // 获取用户信息
+        wx.getSetting({
+          success: function success(res) {
+            if (res.authSetting['scope.userInfo']) {
+              // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+              wx.getUserInfo({
+                success: function success(res) {
+                  console.log(res); // 可以将 res 发送给后台解码出 unionId
+                  //console.log(getApp());
 
-      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-        args[_key] = arguments[_key];
+                  getApp().$wepy.$options.globalData.userInfo = res.userInfo; // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+                  // 所以此处加入 callback 以防止这种情况
+
+                  if (_this.userInfoReadyCallback) _this.userInfoReadyCallback(res);
+                }
+              });
+            }
+          }
+        });
       }
-
-      console.log(args);
     });
   },
   methods: {
-    sleep: function sleep(s) {
-      return new Promise(function (resolve, reject) {
-        setTimeout(function () {
-          resolve('promise resolved');
-        }, s * 1000);
-      });
-    },
-    testAsync: function () {
-      var _testAsync = _asyncToGenerator(
-      /*#__PURE__*/
-      _regeneratorRuntime2["default"].mark(function _callee() {
-        var d;
-        return _regeneratorRuntime2["default"].wrap(function _callee$(_context) {
-          while (1) {
-            switch (_context.prev = _context.next) {
-              case 0:
-                _context.next = 2;
-                return this.sleep(3);
-
-              case 2:
-                d = _context.sent;
-                console.log(d);
-
-              case 4:
-              case "end":
-                return _context.stop();
-            }
-          }
-        }, _callee, this);
-      }));
-
-      function testAsync() {
-        return _testAsync.apply(this, arguments);
-      }
-
-      return testAsync;
-    }()
+    userInfoReadyCallback: function userInfoReadyCallback(res) {//console.log('user info: ', res.userInfo);
+    }
+  },
+  globalData: {
+    userInfo: {}
   }
-}, {info: {"noPromiseAPI":["createSelectorQuery"]}, handlers: {}, models: {} }, {info: {"noPromiseAPI":["createSelectorQuery"]}, handlers: {}, models: {} }, {info: {"noPromiseAPI":["createSelectorQuery"]}, handlers: {}, models: {} });
+}, {info: {"noPromiseAPI":["createSelectorQuery"]}, handlers: {}, models: {} });

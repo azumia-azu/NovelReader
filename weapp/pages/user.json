@@ -1,7 +1,16 @@
 {
-    "navigationBarTitleText": "我的信息",
     "component": true,
     "usingComponents": {
-        "panel": "../components/panel"
+        "van-button": "../components/dist/button/index",
+        "van-cell": "../components/dist/cell/index",
+        "van-cell-group": "../components/dist/cell-group/index",
+        "van-icon": "../components/dist/icon/index",
+        "van-row": "../components/dist/row/index",
+        "van-col": "../components/dist/col/index",
+        "action-sheet": "../components/dist/action-sheet/index",
+        "van-grid": "../components/dist/grid/index",
+        "van-grid-item": "../components/dist/grid-item/index",
+        "van-dialog": "../components/dist/dialog/index",
+        "van-popup": "../components/dist/popup/index"
     }
 }

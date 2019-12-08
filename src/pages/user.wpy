@@ -4,139 +4,109 @@
     display: flex;
     flex-direction: row;
   }
+  .user-icon-contaniner{
+    overflow: hidden;
+    border-radius: 60%;
+    width: 160rpx;
+    height: 160rpx;
+    margin: 16rpx 50rpx;
+  }
   .user-icon{
-    width: 100rpx;
-    height: 100rpx;
+    padding: 30rpx;
   }
-  .user-info{
-    display: flex;
-    flex-direction: column;
-  }
-  .nickName{
-      align-content: center;
-      height: 50%;
-      padding-left: 40rpx;
-      font-size: 12px;
-      font-weight: bold;
-    }
-  .addr{
-    align-content: center;
-    height:50%;
-    padding-left: 40rpx;
-    font-size: 8px;
-    font-weight: lighter;
-  }
-  .item{
-    height: 35rpx;
-    display: flex;
-    flex-direction: row;
-  }
-  .icon{
-    width: 30rpx;
-    height: 30rpx;
-  }
-  .label{
-    padding-left: 10rpx;
+  .floatBar{
+    //overflow: hidden;
+    //border-radius: 10%;
+    width: 100%;
+    //position: fixed;
+    z-index: 1004;
   }
 </style>
 <template>
-  <div class="container">
-    <div v-show="!authed">
-      <open-data type="userAvatarUrl"></open-data>
-      <open-data type="userNickName"></open-data>
-      <!-- 需要使用 button 来授权登录 -->
-      <button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
-      <view wx:else>请升级微信版本</view>
+  <div style="width: 100%;height: 100%">
+    <div style="background-color: #a9e29d; width: 100%;height: 30vh;">
+      <div style="align-content: flex-start; font-size: large; font-weight: lighter;padding-left: 50rpx;padding-top: 6vh;z-index: 1000">{{'个人中心'}}</div>
+      <div style="z-index: 1000;margin-top: 40rpx">
+        <van-row>
+          <van-col span="8">
+            <div class="user-icon-contaniner">
+              <image :src="userInfo.avatarUrl" style="width: 160rpx;height: 160rpx"/>
+            </div>
+          </van-col>
+          <van-col span="16">
+            <div style="padding-top: 50rpx;padding-left: 20rpx">
+              <div>{{ userInfo.nickName }}</div>
+              <div style="font-weight: lighter">{{ userInfo.country}}-{{userInfo.province}}-{{userInfo.city }}</div>
+            </div>
+          </van-col>
+        </van-row>
+      </div>
     </div>
-    <div v-show="authed" style="width:100%">
-      <panel>
-        <view class="user">
-          <view class="user-icon">
-            <open-data type="userAvatarUrl"></open-data>
-          </view>
-          <view class="user-info">
-            <view class="nickName">{{ userInfo.nickName }}</view>
-            <view class="addr">{{ userInfo.country + "-" + userInfo.province + "-" + userInfo.city}}</view>
-          </view>
-        </view>
-      </panel>
-
-      <panel>
-        <view class="item" @tap="getRecord()">
-          <view>
-            <image class="icon" src="https://img.icons8.com/ios/1600/order-history.png"/>
-          </view>
-          <view class="label">{{ "浏览记录" }}</view>
-        </view>
-      </panel>
-      <panel>
-        <view class="item" @tap="getAbout()">
-          <view>
-            <image class="icon" src="https://zh.opensuse.org/images/5/57/Icon-question.png"/>
-          </view>
-          <view class="label">{{ "关于" }}</view>
-        </view>
-      </panel>
-
+    <div class="floatBar">
+      <van-grid>
+        <van-grid-item @click="getRecord()" icon="{{icons[0]}}" text="我的收藏" />
+        <van-grid-item @click="getAbout()" icon="{{icons[1]}}" text="浏览记录" />
+        <van-grid-item icon="{{icons[2]}}" text="当前在看" />
+        <van-grid-item icon="{{icons[3]}}" text="关于" />
+      </van-grid>
     </div>
   </div>
 </template>
 
 <script>
-  import wepy from '@wepy/core'
+  import wepy from '@wepy/core';
+  import Dialog from '../components/dist/dialog/dialog';
 
   wepy.page({
-    config: {
-    },
-
-    hooks: {
-      // Page 级别 hook, 只对当前 Page 的 setData 生效。
-    },
-
     data: {
-      canIUse: wx.canIUse('button.open-type.getUserInfo'),
-      authed: false,
-      userInfo: {}
-    },
+      userInfo: {
+        nickName: '',
+        country: '',
+        province: '',
+        city: ''
+      },
 
-    computed: {
+      icons: [
+        "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1575806557473&di=a25523fc94a9fc89cf9d150aaacec9ae&imgtype=0&src=http%3A%2F%2Fpic.51yuansu.com%2Fpic3%2Fcover%2F02%2F41%2F19%2F59c2ffdc21eec_610.jpg",
+        "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1575737567704&di=540bf74c48a2c4a3f015d85520d08661&imgtype=0&src=http%3A%2F%2Fimg.25pp.com%2Fuploadfile%2Fsoft%2Fimages%2F2015%2F0806%2F20150806050310138.jpg",
+        "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1575806745442&di=2c367e8ff21ada929c7c4e3c5d205256&imgtype=0&src=http%3A%2F%2Fis2.mzstatic.com%2Fimage%2Fthumb%2FPurple111%2Fv4%2F30%2Fa3%2F4f%2F30a34fe6-496a-2f5e-b538-980e9d1282c6%2Fsource%2F512x512bb.jpg",
+        "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1575806797092&di=3a87dcf6f27e760701e75469500e1ad9&imgtype=0&src=http%3A%2F%2Fbpic.588ku.com%2Felement_origin_min_pic%2F01%2F54%2F84%2F75574739874192a.jpg"
+      ],
     },
 
     methods: {
-      bindGetUserInfo (e) {
-        this.authed=true;
-        this.userInfo=e.$wx.detail.userInfo;
-      },
       getRecord(){
         wx.navigateTo({ url: 'records'});
         console.log("获取观看记录");
       },
       getAbout(){
-        wx.navigateTo({ url: 'about'});
-        console.log("获取关于");
+        Dialog.confirm({
+          title: '开发者邮箱',
+          message: '这是我的邮箱676667544@qq.com，有问题请发邮件'
+        }).then({
+        });
       }
     },
 
     created() {
-      wx.getSetting({
-        success(res){
-          if (res.authSetting['scope.userInfo']) {
-            wx.getUserInfo({
-              success: function(res) {
-                console.log(res.userInfo);
-              }
-            })
-          }
-        }
-      })
+      this.userInfo = getApp().$wepy.$options.globalData.userInfo;
     }
   });
 </script>
 <config>
 {
-    navigationBarTitleText: '我的信息',
     usingComponents: {
-      panel: '~@/components/panel',
+      "van-button": "~@/components/dist/button/index",
+      "van-cell": "~@/components/dist/cell/index",
+      "van-cell-group": "~@/components/dist/cell-group/index",
+      "van-icon": "~@/components/dist/icon/index",
+      "van-row": "~@/components/dist/row/index",
+      "van-col": "~@/components/dist/col/index",
+      "action-sheet": "~@/components/dist/action-sheet/index",
+      "van-grid": "~@/components/dist/grid/index",
+      "van-grid-item": "~@/components/dist/grid-item/index",
+      "van-dialog": "~@/components/dist/dialog/index",
+      "van-popup": "~@/components/dist//popup/index"
     }
 }
 </config>

@@ -1,41 +1,29 @@
 
-<view class="container">
-  <view hidden="{{ !(!authed) }}">
-    <open-data type="userAvatarUrl"></open-data>
-    <open-data type="userNickName"></open-data>
-    
-    <button wx:if="{{canIUse}}" open-type="getUserInfo" data-wpy-evt="8-22" bindgetuserinfo="_proxy">授权登录</button>
-    <view wx:else="">请升级微信版本</view>
+<view style="width: 100%;height: 100%">
+  <view style="background-color: #a9e29d; width: 100%;height: 30vh;">
+    <view style="align-content: flex-start; font-size: large; font-weight: lighter;padding-left: 50rpx;padding-top: 6vh;z-index: 1000">{{'个人中心'}}</view>
+    <view style="z-index: 1000;margin-top: 40rpx">
+      <van-row bind_init="_initComponent">
+        <van-col bind_init="_initComponent" span="8">
+          <view class="user-icon-contaniner">
+            <image src="{{ userInfo.avatarUrl }}" style="width: 160rpx;height: 160rpx"></image>
+          </view>
+        </van-col>
+        <van-col bind_init="_initComponent" span="16">
+          <view style="padding-top: 50rpx;padding-left: 20rpx">
+            <view>{{ userInfo.nickName }}</view>
+            <view style="font-weight: lighter">{{ userInfo.country}}-{{userInfo.province}}-{{userInfo.city }}</view>
+          </view>
+        </van-col>
+      </van-row>
+    </view>
   </view>
-  <view hidden="{{ !(authed) }}" style="width:100%">
-    <panel bind_init="_initComponent">
-      <view class="user">
-        <view class="user-icon">
-          <open-data type="userAvatarUrl"></open-data>
-        </view>
-        <view class="user-info">
-          <view class="nickName">{{ userInfo.nickName }}</view>
-          <view class="addr">{{ userInfo.country + "-" + userInfo.province + "-" + userInfo.city}}</view>
-        </view>
-      </view>
-    </panel>
-
-    <panel bind_init="_initComponent">
-      <view data-wpy-evt="8-23" bindtap="_proxy" class="item">
-        <view>
-          <image src="https://img.icons8.com/ios/1600/order-history.png" class="icon"></image>
-        </view>
-        <view class="label">{{ "浏览记录" }}</view>
-      </view>
-    </panel>
-    <panel bind_init="_initComponent">
-      <view data-wpy-evt="8-24" bindtap="_proxy" class="item">
-        <view>
-          <image src="https://zh.opensuse.org/images/5/57/Icon-question.png" class="icon"></image>
-        </view>
-        <view class="label">{{ "关于" }}</view>
-      </view>
-    </panel>
-
+  <view class="floatBar">
+    <van-grid bind_init="_initComponent">
+      <van-grid-item bind_init="_initComponent" icon="{{icons[0]}}" text="我的收藏" data-wpy-evt="5-0" bindtap="_proxy"></van-grid-item>
+      <van-grid-item bind_init="_initComponent" icon="{{icons[1]}}" text="浏览记录" data-wpy-evt="5-1" bindtap="_proxy"></van-grid-item>
+      <van-grid-item bind_init="_initComponent" icon="{{icons[2]}}" text="当前在看"></van-grid-item>
+      <van-grid-item bind_init="_initComponent" icon="{{icons[3]}}" text="关于"></van-grid-item>
+    </van-grid>
   </view>
 </view>
