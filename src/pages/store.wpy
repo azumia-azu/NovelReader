@@ -1,0 +1,176 @@
+<style>
+  swiper{
+    margin-top: 10rpx;
+  }
+  .slide-image {
+    width: 100%;
+    height: 100%;
+  }
+  ::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+    color: transparent;
+  }
+  .zoom-out {
+    transform: scale(0.8);
+    transition: all 0.7s ease-out 0s;
+  }
+  .zoom-in {
+    transform: scale(1);
+    transition: all 0.7s ease-in 0s;
+  }
+  .book-img{
+    width: 150rpx;
+    height: 200rpx;
+    padding-left: 50rpx;
+  }
+  .book-img-contaniner{
+    width:100%;
+    height:160rpx;
+    margin-bottom: 15rpx;
+    margin-top: 15rpx;
+  }
+</style>
+<template>
+  <div class="container">
+    <div style="align-content: flex-start; font-size: large; font-weight: lighter;padding-left: 50rpx">{{'书城'}}</div>
+    <swiper
+      indicator-dots="{{indicatorDots}}"
+      autoplay="{{autoplay}}"
+      interval="{{interval}}"
+      duration="{{duration}}"
+      previous-margin="{{previousMargin}}"
+      next-margin="{{nextMargin}}"
+      circular="{{circular}}"
+      bindchange="onSwiperChange">
+
+      <block wx:for="{{imgUrls}}" wx:key="item">
+        <swiper-item>
+          <image class="slide-image {{currentSwiperIndex == index ? 'zoom-in' : 'zoom-out'}}" src="{{item}}" @click="onSlideimageClick(item)"/>
+        </swiper-item>
+      </block>
+    </swiper>
+
+    <view>
+      <van-grid>
+        <van-grid-item @click="onRankClick" icon="{{icons[0]}}" text="榜单" />
+        <van-grid-item @click="onFullbookClick" icon="{{icons[1]}}" text="完本" />
+        <van-grid-item @click="onBestpieceClick" icon="{{icons[2]}}" text="精选" />
+        <van-grid-item @click="onBooklistClick" icon="{{icons[3]}}" text="书单" />
+      </van-grid>
+    </view>
+
+    <view v-for="book in recommend" v-bind:key="book">
+      <van-cell-group @click="onRecommendClick(book)">
+        <van-row>
+          <van-col span="8">
+            <div class="book-img-contaniner">
+              <image class="book-img" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1575729659585&di=477f46fea519fa950294899182dbd7a7&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F01ddc157d87ff10000012e7e7fb2db.jpg"/>
+            </div>
+          </van-col>
+          <van-col span="16">
+            <van-cell title="{{ book.title }}" label="{{ book.info }}" border="{{ false }}" />
+          </van-col>
+        </van-row>
+      </van-cell-group>
+    </view>
+  </div>
+</template>
+
+<script>
+  import wepy from '@wepy/core'
+
+  wepy.page({
+    data: {
+      // 轮播台
+      imgUrls: [
+        'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1575736779222&di=3c1263f373765c0e3d6989c1437d425c&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F0180505576f3d900000059ffb88b71.jpg',
+        'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1575736779435&di=0508a4b951631317d601c5c773282eeb&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F031e26a582a65b4a84a0d304fe92b85.jpg',
+        'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1575737042621&di=f9bd82fa2a72a1b16db00206e5310273&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F0128a9583fd299a801219c7702bbde.jpg',
+        'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1575737042621&di=555c1f6f62e1c2b84799ebb8a6737488&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F11%2F47%2F02%2F34z58PICIsX.jpg',
+        'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1575737042621&di=0d4f785c4d99a25af607a709ee8d8073&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F018a0f586bc19fa8012060c89dd020.jpg',
+        'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1575737042620&di=2df9634a885d06ff5434993aa7c92330&imgtype=0&src=http%3A%2F%2Fpic25.nipic.com%2F20121115%2F3801838_103419013386_2.jpg'
+      ],
+      indicatorDots: true, //是否显示面板指示点
+      autoplay: true, //是否自动播放
+      interval: 3000, //停留时间间隔
+      duration: 1000, //播放时长
+      previousMargin: '20px', //前边距，可用于露出前一项的一小部分，接受 px 和 rpx 值
+      nextMargin: '20px', //后边距，可用于露出后一项的一小部分，接受 px 和 rpx 值
+      circular: true, //是否采用衔接滑动
+      currentSwiperIndex: 0, //swiper当前索引
+
+      // 宫格
+      icons: [
+        "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1575737504579&di=b64a61b25442c87adab7ebb5fd04869b&imgtype=0&src=http%3A%2F%2Fpic.51yuansu.com%2Fpic3%2Fcover%2F01%2F37%2F76%2F5926a958552de_610.jpg",
+        "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1575737567704&di=540bf74c48a2c4a3f015d85520d08661&imgtype=0&src=http%3A%2F%2Fimg.25pp.com%2Fuploadfile%2Fsoft%2Fimages%2F2015%2F0806%2F20150806050310138.jpg",
+        "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1575737620465&di=87981db3843a119f77425ca4ff15b495&imgtype=0&src=http%3A%2F%2Fbpic.588ku.com%2Felement_pic%2F18%2F07%2F19%2F4a750621e5cb2ef5f4695c2a60890b7b.jpg",
+        "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1575737653100&di=c1f231025f47fdac1a38b65e575fde74&imgtype=jpg&src=http%3A%2F%2Fimg3.imgtn.bdimg.com%2Fit%2Fu%3D746709513%2C614414470%26fm%3D214%26gp%3D0.jpg"
+      ],
+
+      recommend:[{
+          id: 1,
+          imgUrl: "",
+          title: "设计之道",
+          info: "必看网收集了文学、心理、人物、哲学、历史、科普、经济等十类国内外著名书籍,供书友在线阅读和下载。望广大书友..."
+        },{
+          id: 2,
+          imgUrl: "",
+          title: "十万个为什么",
+          info: "2019年11月27日 - 、要收购家庭废旧书籍、企业、单位、学校图书馆处理书籍、各出版社、图书公司滞销库存书籍等..."
+        },{
+          id: 3,
+          imgUrl: "",
+          title: "为什么你不知道",
+          info: "在文明的传承中,书籍发挥的作用是空前的。 华夏文明,从甲骨文开始,一直被记录至今。不管是中国的儒家文化,还是 ..."
+        }]
+    },
+    methods: {
+      onSwiperChange(e) {
+        //console.log(e);
+        this.currentSwiperIndex = e.$wx.detail.current;
+      },
+
+      onSlideimageClick(item){
+        console.log('slide image clicked')
+      },
+
+      onRankClick(){
+        console.log('rank clicked')
+      },
+
+      onFullbookClick(){
+        console.log('full book clicked')
+      },
+
+      onBestpieceClick(){
+        console.log('best pieces click')
+      },
+
+      onBooklistClick(){
+        console.log('book list click')
+      },
+
+      onRecommendClick(book){
+        console.log('recommend clicked');
+
+        wx.navigateTo({
+          url: 'detail?id=' + book.id
+        })
+      }
+    }
+  });
+</script>
+<config>
+{
+    usingComponents: {
+      "van-search": "~@/components/dist/search/index",
+      "van-cell": "~@/components/dist/cell/index",
+      "van-cell-group": "~@/components/dist/cell-group/index",
+      "van-row": "~@/components/dist/row/index",
+      "van-col": "~@/components/dist/col/index",
+      "van-grid": "~@/components/dist/grid/index",
+      "van-grid-item": "~@/components/dist/grid-item/index"
+    }
+}
+</config>
